@@ -10,25 +10,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          ref: main # Specify the branch to check out
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
 
-    - name: Install Dependencies
-      run: yarn
+      - name: Install Dependencies
+        run: yarn
 
-    - name: Build
-      run: yarn build
+      - name: Build
+        run: yarn build
 
-    - name: Deploy to GitHub Pages
-      run: |
-        git config --global user.email "logiccanvas@gmail.com"
-        git config --global user.name "Kashif Hussain"
-        git checkout --orphan gh-pages
-        git --work-tree build add --all
-        git --work-tree build commit -m "App depoloyment on GitHub Pages"
-        git push origin HEAD:gh-pages --force
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.email "logiccanvas@gmail.com"
+          git config --global user.name "Kashif Hussain"
+          git checkout --orphan gh-pages
+          git --work-tree build add --all
+          git --work-tree build commit -m "App deployment on GitHub Pages"
+          git push origin HEAD:gh-pages --force
