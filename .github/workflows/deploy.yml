@@ -28,7 +28,6 @@ jobs:
         run: |
           git config --global user.email "logiccanvas@gmail.com"
           git config --global user.name "Kashif Hussain"
-          git checkout --orphan gh-pages
-          git --work-tree build add --all
-          git --work-tree build commit -m "App deployment on GitHub Pages"
-          git push origin HEAD:gh-pages --force
+          git add -f build
+          git commit -m "App deployment on GitHub Pages"
+          git subtree push --prefix build origin gh-pages
