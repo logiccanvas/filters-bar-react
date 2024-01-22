@@ -17,7 +17,8 @@ jobs:
         with:
           node-version: "18"
 
-      # Pick your own package manager and build script
+
+      - run: rm -rf dist
       - run: yarn
       - run: yarn build
         env:
