@@ -7,4 +7,7 @@ export default defineConfig({
   loader: {
     ".js": "jsx",
   },
+  build: {
+    base: '/filters-bar-react/'
+  }
 });
