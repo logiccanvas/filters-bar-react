@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://logiccanvas.github.io/filters-bar-react/",
+  "homepage": "/filters-bar-react",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
